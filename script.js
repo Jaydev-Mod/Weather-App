@@ -84,4 +84,5 @@ const getWeatherInfo = async () => {
     }
 }
 
-document.body.addEventListener("load", getWeatherInfo);
+// Just call the function directly on load
+getWeatherInfo();
