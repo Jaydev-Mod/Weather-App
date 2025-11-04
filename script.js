@@ -40,8 +40,7 @@ citySearch.addEventListener("submit",async (e)=>{
 })
 
 const getWeatherInfo = async () => {
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=d72b797b6b1b7b7fa18575eb26067db7`;
-
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`;
     try {   
          w_temperature.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
         
