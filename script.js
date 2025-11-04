@@ -40,7 +40,7 @@ citySearch.addEventListener("submit",async (e)=>{
 })
 
 const getWeatherInfo = async () => {
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`;
+    const weatherURL = `/api/get-weather?city=${city}`;
     try {   
          w_temperature.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
         
@@ -87,7 +87,7 @@ const getWeatherInfo = async () => {
 // NEW FUNCTION TO FETCH BY COORDS
 const getWeatherByCoords = async (lat, lon) => {
     // This URL is different: it uses lat and lon
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${API_KEY}`;
+    const weatherURL = `/api/get-weather?lat=${lat}&lon=${lon}`;
     
     try {   
         w_temperature.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
