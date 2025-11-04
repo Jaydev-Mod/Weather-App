@@ -1,0 +1,197 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+/* Container Styles */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header and Search */
+.weather-header {
+    margin-bottom: 30px;
+}
+
+.weather-search {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.weather-search:focus-within {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.weather-search i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.city-name {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+.city-name::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Main Weather Display */
+.weather-body {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.weather-city {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.weather-date_time {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.weather-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.weather-forecast-container {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 15px; 
+    padding: 4px 15px; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 10px; 
+}
+.weather-forecast {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-temperature {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 10px 0;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Weather Info Cards */
+.weather-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.weather-card:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.weather-card i {
+    font-size: 1.8rem;
+    margin-right: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.weather-card div p:first-child {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.weather-card div p:last-child {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .containe {
+        border-radius: 10px;
+        padding: 20px 15px;
+    }
+    
+    .weather-city {
+        font-size: 2rem;
+    }
+    
+    .weather-temperature {
+        font-size: 3rem;
+    }
+    
+    .weather-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation for weather icon */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.weather-icon img {
+    animation: float 3s ease-in-out infinite;
+    width: 100%;
+    height: auto;
+}
